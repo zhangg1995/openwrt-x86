@@ -2,6 +2,7 @@
 
 
 mkdir -p files/etc/openclash/core
+mkdir -p files/etc/config
 mkdir -p files/root
 
 CLASH_DEV_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/dev/dev/clash-linux-armv7.tar.gz"
@@ -26,4 +27,9 @@ echo "# Put your custom commands here that should be executed once
 
 bash /root/1.sh
 exit 0">files/etc/rc.local
+
+echo "config ttyd
+        option interface '@lan'
+        option command '/bin/login -f root'
+        option debug '7'">files/etc/config/ttyd
 
