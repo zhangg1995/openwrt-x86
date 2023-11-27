@@ -2,18 +2,15 @@ name: immortalwrt
 
 on:
   workflow_dispatch:
-    inputs:
-      manual:
-        description: '手动触发一次编译'
 
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   CONFIG_FILE: .config
-  DIY_P1_SH: op1.sh
-  DIY_P2_SH: op2.sh
-  DIY_P3_SH: op3.sh
-  DIY_P4_SH: oc.sh
+  DIY_P1_SH: sh/op1.sh
+  DIY_P2_SH: sh/op2.sh
+  DIY_P3_SH: sh/op3.sh
+  DIY_P4_SH: sh/oc.sh
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
