@@ -16,3 +16,4 @@ echo "          \/      \/                        \/      " >> package/base-file
 echo " -----------------------------------------------------" >> package/base-files/files/etc/banner
 echo " %D %C ${date} by shiyu1314                     " >> package/base-files/files/etc/banner
 echo " -----------------------------------------------------" >> package/base-files/files/etc/banner
+echo "                                                      " >> package/base-files/files/etc/banner
