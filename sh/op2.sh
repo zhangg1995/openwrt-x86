@@ -5,6 +5,9 @@ sed -i "s/192.168.1.1/192.168.2.2/" package/base-files/files/bin/config_generate
 
 sudo rm -rf package/base-files/files/etc/banner
 
+sed -i "s/%D %V %C/%D $(TZ=UTC-8 date +%Y.%m.%d) by shiyu1314/" package/base-files/files/etc/openwrt_release
+
+
 date=$(date +"%Y-%m-%d %H:%M:%S")
 echo "                                                    " >> package/base-files/files/etc/banner
 echo ".___                               __         .__" >> package/base-files/files/etc/banner
