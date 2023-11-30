@@ -9,6 +9,8 @@ sed -i "s/%D %V %C/%D $(TZ=UTC-8 date +%Y.%m.%d)/" package/base-files/files/etc/
 
 sed -i "s/%R/by shiyu1314/" package/base-files/files/etc/openwrt_release
 
+sed -i '$a ([ -x /bin/bash ] && ! grep -q "^root.*bash" /etc/passwd) && sed -i "s/^\(root.*\/\)ash/\1bash/g" /etc/passwd' package/emortal/default-settings/files/99-default-settings-chinese
+
 
 date=$(date +"%Y-%m-%d")
 echo "                                                    " >> package/base-files/files/etc/banner
