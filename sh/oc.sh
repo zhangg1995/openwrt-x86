@@ -3,6 +3,7 @@
 
 mkdir -p files/etc/openclash/core
 mkdir -p files/etc/profile.d
+mkdir -p files/etc/config
 mkdir -p files/root
 
 CLASH_DEV_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/dev/dev/clash-linux-armv7.tar.gz"
@@ -29,3 +30,29 @@ echo "# Put your custom commands here that should be executed once
 
 bash /root/1.sh
 exit 0">files/etc/rc.local
+
+echo "
+config defaults
+	option input 'ACCEPT'
+	option output 'ACCEPT'
+	option forward 'ACCEPT'
+
+config zone
+	option name 'lan'
+	option network 'lan utun'
+	option input 'ACCEPT'
+	option output 'ACCEPT'
+	option forward 'ACCEPT'
+
+config include 'openclash'
+	option type 'script'
+	option path '/var/etc/openclash.include'
+
+config zone 'docker'
+	option input 'ACCEPT'
+	option output 'ACCEPT'
+	option forward 'ACCEPT'
+	option name 'docker'
+	list network 'docker'
+
+">files/etc/config/firewall
