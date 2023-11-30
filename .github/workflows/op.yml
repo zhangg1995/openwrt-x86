@@ -6,7 +6,7 @@ on:
 env:
   REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: main
-  CONFIG_FILE: im.config
+  CONFIG_FILE: op.config
   DIY_P1_SH: sh/op.sh
   DIY_P2_SH: sh/oc.sh
   UPLOAD_FIRMWARE: true
