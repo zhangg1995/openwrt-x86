@@ -8,8 +8,6 @@ svn export https://github.com/immortalwrt/immortalwrt//trunk/package/emortal/def
 
 sed -i '$a src-git kiddin9 https://github.com/kiddin9/openwrt-packages.git;master' feeds.conf.default
 
-sed -i "/telephony/d" feeds.conf.default
-
 ./scripts/feeds update -a
 ./scripts/feeds install -a -p kiddin9 -f
 ./scripts/feeds install -a
