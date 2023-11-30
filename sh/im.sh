@@ -4,13 +4,15 @@ svn export https://github.com/shiyu1314/openwrt-onecloud/trunk/target/linux/meso
 
 svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 
+svn export https://github.com/shiyu1314/openwrt-onecloud/trunk/default-settings package/default-settings
+
 echo 'src-git dns https://github.com/sbwml/luci-app-mosdns' >>feeds.conf.default
 
-sed -i '4a ([ -x /bin/bash ] && ! grep -q "^root.*bash" /etc/passwd) && sed -i "s/^(root.*/)ash/1bash/g" /etc/passwd \n' package/emortal/default-settings/files/99-default-settings-chinese
 
 ./scripts/feeds update -a
 sudo rm -rf feeds/packages/net/mosdns
 sudo rm -rf feeds/luci/applications/luci-app-openclash
+sudo rm -rf package/emortal/default-settings
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
