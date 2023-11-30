@@ -7,10 +7,8 @@ env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   CONFIG_FILE: im.config
-  DIY_P1_SH: sh/im1.sh
-  DIY_P2_SH: sh/im2.sh
-  DIY_P3_SH: sh/im3.sh
-  DIY_P4_SH: sh/oc.sh
+  DIY_P1_SH: sh/im.sh
+  DIY_P2_SH: sh/oc.sh
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
@@ -46,32 +44,15 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH        
         
-    - name: 更新订阅源
-      run: cd openwrt && ./scripts/feeds update -a 
-      
-    - name: 删除一些订阅源包
-      run: |
-        chmod +x $DIY_P3_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P3_SH
-        
-    - name: 二次更新订阅源
-      run: cd openwrt && ./scripts/feeds update -a
-
-    - name: 安装订阅源
-      run: cd openwrt && ./scripts/feeds install -a  
       
     - name: 下载oc内核
       run: |
-        $GITHUB_WORKSPACE/$DIY_P4_SH
+        $GITHUB_WORKSPACE/$DIY_P2_SH
         
     - name: 加载自定义配置
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x $DIY_P2_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
         
     - name: 下载编译依赖
       id: package

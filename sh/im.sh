@@ -1,7 +1,23 @@
 #!/bin/bash
 
+svn export https://github.com/shiyu1314/openwrt-onecloud/trunk/target/linux/meson target/linux/meson
+
+svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
+
+svn export https://github.com/shiyu1314/openwrt-onecloud/trunk/default-settings package/default-settings
+
+echo 'src-git dns https://github.com/sbwml/luci-app-mosdns' >>feeds.conf.default
+
+./scripts/feeds update -a
+sudo rm -rf feeds/packages/net/mosdns
+sudo rm -rf feeds/luci/applications/luci-app-openclash
+sudo rm -rf package/emortal/default-settings
+
+./scripts/feeds update -a
+./scripts/feeds install -a
 
 sed -i "s/192.168.1.1/192.168.2.2/" package/base-files/files/bin/config_generate
+sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
 sudo rm -rf package/base-files/files/etc/banner
 

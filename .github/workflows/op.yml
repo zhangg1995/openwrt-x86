@@ -47,6 +47,11 @@ jobs:
     - name: 下载oc内核
       run: |
         $GITHUB_WORKSPACE/$DIY_P2_SH
+
+    - name: 加载自定义配置
+      run: |
+        [ -e files ] && mv files openwrt/files
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         
     - name: 下载编译依赖
       id: package
