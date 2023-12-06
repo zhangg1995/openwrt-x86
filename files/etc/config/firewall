@@ -3,20 +3,16 @@ config defaults
 	option input 'ACCEPT'
 	option output 'ACCEPT'
 	option forward 'ACCEPT'
+	option flow_offloading '1'
+	option flow_offloading_hw '1'
 
 config zone
 	option name 'lan'
-	option network 'lan utun'
 	option input 'ACCEPT'
 	option output 'ACCEPT'
 	option forward 'ACCEPT'
-
-config zone 'docker'
-	option input 'ACCEPT'
-	option output 'ACCEPT'
-	option forward 'ACCEPT'
-	option name 'docker'
-	list network 'docker'
+	list network 'lan'
+	list network 'utun'
 
 config include 'openclash'
 	option type 'script'
