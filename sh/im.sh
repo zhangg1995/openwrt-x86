@@ -12,7 +12,6 @@ echo 'src-git dns https://github.com/sbwml/luci-app-mosdns' >>feeds.conf.default
 ./scripts/feeds update -a
 sudo rm -rf feeds/packages/net/mosdns
 sudo rm -rf feeds/luci/applications/luci-app-openclash
-sed -i 's|ARM64/AMD64|ARM|g' feeds/luci/applications/luci-app-homeproxy/po/zh_Hans/homeproxy.po
 sudo rm -rf package/emortal/default-settings
 
 ./scripts/feeds update -a
