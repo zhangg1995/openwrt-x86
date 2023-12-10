@@ -40,6 +40,7 @@ jobs:
         
     - name: 加载自定义脚本
       run: |
+        [ -e include ] && mv include openwrt/include
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH        
