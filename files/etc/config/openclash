@@ -97,11 +97,6 @@ config dns_servers
 	option ip '1.1.1.1/dns-query'
 	option enabled '1'
 
-config authentication
-	option enabled '1'
-	option username 'Clash'
-	option password 'zDfa52BC'
-
 config dns_servers
 	option enabled '1'
 	option group 'default'
