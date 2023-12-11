@@ -6,6 +6,8 @@ svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash packa
 
 svn export https://github.com/shiyu1314/openwrt-onecloud/trunk/default-settings package/default-settings
 
+svn export https://github.com/shiyu1314/openwrt-onecloud/trunk/kernel/kernel-6.1 include/kernel-6.1
+
 echo 'src-git dns https://github.com/sbwml/luci-app-mosdns' >>feeds.conf.default
 
 
