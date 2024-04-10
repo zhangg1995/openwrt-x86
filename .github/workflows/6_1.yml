@@ -6,7 +6,7 @@ on:
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: openwrt-23.05
-  CONFIG_FILE: x86.config
+  CONFIG_FILE: im.config
   DIY_P1_SH: sh/im.sh
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
