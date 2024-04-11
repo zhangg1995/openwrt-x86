@@ -26,9 +26,9 @@ wget -qO- $GEOIP_URL > files/etc/openclash/GeoIP.dat
 wget -qO- $GEOSITE_URL > files/etc/openclash/GeoSite.dat
 wget -qO- $GEO_MMDB_URL > files/etc/openclash/Country.mmdb
 
-#chmod +x files/etc/openclash/core/clash*
+chmod +x files/etc/openclash/core/clash*
 #下载ad核心
-#mkdir -p files/usr/bin/AdGuardHome
-#AGH_CORE=$(curl -sL https://api.github.com/repos/AdguardTeam/AdGuardHome/releases/latest | grep /AdGuardHome_linux_amd64 | awk -F '"' '{print $4}')
-#wget -qO- $AGH_CORE | tar xOvz > files/usr/bin/AdGuardHome/AdGuardHome
-#chmod +x files/usr/bin/AdGuardHome/AdGuardHome
+mkdir -p files/usr/bin/AdGuardHome
+AGH_CORE=$(curl -sL https://api.github.com/repos/AdguardTeam/AdGuardHome/releases/latest | grep /AdGuardHome_linux_amd64 | awk -F '"' '{print $4}')
+wget -qO- $AGH_CORE | tar xOvz > files/usr/bin/AdGuardHome/AdGuardHome
+chmod +x files/usr/bin/AdGuardHome/AdGuardHome
