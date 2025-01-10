@@ -30,4 +30,4 @@ wget -qO- $GEO_MMDB_URL > files/etc/openclash/Country.mmdb
 
 chmod +x files/etc/openclash/core/clash*
 
-sed -i 's/$(TARGET_DIR)) install/$(TARGET_DIR)) install --force-overwrite --force-depends/' package/Makefile
+#sed -i 's/$(TARGET_DIR)) install/$(TARGET_DIR)) install --force-overwrite --force-depends/' package/Makefile
