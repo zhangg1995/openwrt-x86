@@ -6,7 +6,7 @@
 #rm -rf openwrt-packages
 #echo 'src-git dns https://github.com/sbwml/luci-app-mosdns' >>feeds.conf.default
 
-echo 'src-git small https://github.com/kenzok8/small-package.git' >>feeds.conf.default
+#echo 'src-git small https://github.com/kenzok8/small-package.git' >>feeds.conf.default
 sed -i "s/192.168.1.1/192.168.3.254/" package/base-files/files/bin/config_generate
 
 ./scripts/feeds update -a
