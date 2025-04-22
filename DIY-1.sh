@@ -14,7 +14,7 @@ git clone https://github.com/WukongMaster/luci-theme-opentomcat.git package/luci
 sed -i '$a\src-git openclash https://github.com/vernesong/OpenClash' ./feeds.conf.default
 
 # 5-添加vnt插件
-git clone https://github.com/sirpdboy/luci-app-vnt.git package/vnt
+git clone https://github.com/lmq8267/luci-app-vnt.git package/vnt
 
 # 5-添加 PassWall 插件
 echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
