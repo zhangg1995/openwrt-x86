@@ -22,3 +22,7 @@ sed -i '/DTS_DIR:=$(LINUX_DIR)/a\BUILD_DATE_PREFIX := $(shell date +'%F')' ./inc
 
 # 7-只显示CPU型号
 sed -i 's/${g}.*/${a}${b}${c}${d}${e}${f}${hydrid}/g' package/lean/autocore/files/x86/autocore
+
+# 8-更新golang
+rm -rf packages/lang/golang
+git clone https://github.com/kenzok8/golang packages/lang/golang
